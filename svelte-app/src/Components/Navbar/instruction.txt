@@ -1,0 +1,2 @@
+Add 'shopping-cart.png' file to /svelte-app/public folder to make things work
+
