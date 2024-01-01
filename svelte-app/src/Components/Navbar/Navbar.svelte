@@ -1,13 +1,13 @@
 <!-- CustomNavbar.svelte -->
 <script>
     import { createEventDispatcher } from 'svelte';
-    import { cartItems } from '../../stores/store.js';    
+    import { cartItemsCount } from '../../stores/store.js';    
     import { is_cart_visible } from '../../stores/store.js';
 
     export let bg_color = 'white';
     export let links = [];
 
-    $: currentValue = $cartItems;
+    $: currentValue = $cartItemsCount;
 
     function handleCartClick() {
         $is_cart_visible = 'visible';

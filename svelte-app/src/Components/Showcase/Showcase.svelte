@@ -1,7 +1,10 @@
 <!-- Showcase.svelte -->
 <script>
     import Card from '../Card/Card.svelte';
+    import { cartItemsCount } from '../../stores/store.js';
     import { cartItems } from '../../stores/store.js';
+    import { cartItemsTotal } from '../../stores/store.js';
+
     // Example cards data
     const cards = [
       { imageSrc: 'https://placehold.co/600x600', text: 'Футболка "Промыслов"', price: 1200 },
@@ -10,8 +13,14 @@
     ];
 
     function handleAddToCart(event) {
-      console.log('Item added to cart:', event.detail);
-      $cartItems += 1;
+      $cartItemsCount += 1;
+      $cartItems.push(event.detail);
+      $cartItems = $cartItems;
+      $cartItemsTotal += event.detail['price'];
+      // console.log($cartItems.length);
+      // console.log($cartItemsTotal);
+      console.log($cartItems);
+      
     }
 </script>
   
