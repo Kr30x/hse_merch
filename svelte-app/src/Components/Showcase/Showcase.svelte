@@ -7,9 +7,9 @@
 
     // Example cards data
     const cards = [
-      { imageSrc: 'https://placehold.co/600x600', text: 'Футболка "Промыслов"', price: 1200 },
-      { imageSrc: 'https://placehold.co/600x600', text: 'Футболка Авдеев', price: 1200 },
-      { imageSrc: 'https://placehold.co/600x600', text: 'Кепка Вялый', price: 900 },
+      { imageSrc: 'https://placehold.co/600x600', text: 'Футболка ', price: 1200 },
+      { imageSrc: 'https://placehold.co/600x600', text: 'Свитер ', price: 1900 },
+      { imageSrc: 'https://placehold.co/600x600', text: 'Кепка ', price: 900 },
     ];
 
     function handleAddToCart(event) {
