@@ -10,6 +10,10 @@
       { imageSrc: 'https://placehold.co/600x600', text: 'Футболка ', price: 1200 },
       { imageSrc: 'https://placehold.co/600x600', text: 'Свитер ', price: 1900 },
       { imageSrc: 'https://placehold.co/600x600', text: 'Кепка ', price: 900 },
+      { imageSrc: 'https://placehold.co/600x600', text: 'Кепка ', price: 900 },
+      // two hidden cards to make the next row start from the left side
+      { invis: 'hidden' },
+      { invis: 'hidden' },
     ];
 
     function handleAddToCart(event) {
@@ -36,7 +40,7 @@
 </style>
 
 <div class="showcase">
-  {#each cards as { imageSrc, text, price }}
-    <Card {imageSrc} {text} {price} on:add-to-cart={handleAddToCart} />
+  {#each cards as { imageSrc, text, price, invis }}
+    <Card {imageSrc} {text} {price} {invis} on:add-to-cart={handleAddToCart} />
   {/each}
 </div>

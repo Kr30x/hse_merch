@@ -3,7 +3,7 @@
     export let imageSrc = '';
     export let text = '';
     export let price = 0;
-
+    export let invis = 'visible';
     
 
     import { createEventDispatcher } from 'svelte';
@@ -32,6 +32,7 @@
   .text {
     padding: 1rem;
     text-align: center;
+    font-weight: 700;
   }
 
   button{
@@ -51,11 +52,11 @@
   }
 
 </style>
-  
-  <div class="card">
-    <img src={imageSrc} alt="Card Image" />
-    <div class="text">{text}</div>
-    <div class="text">{price + '₽'}</div>
-    <button on:click={addToCart} class="button">В корзину</button>
-  </div>
+
+<div class="card" style="visibility: {invis};">
+  <img src={imageSrc} alt="Card Image" />
+  <div class="text">{text}</div>
+  <div class="text">{price + '₽'}</div>
+  <button on:click={addToCart} class="button">В корзину</button>
+</div>
   

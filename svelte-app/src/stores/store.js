@@ -6,3 +6,4 @@ export let cartItemsCount = writable(0);
 export let is_cart_visible = writable('');
 export let cartItems = writable([]);
 export let cartItemsTotal = writable(0);
+export let alerts = writable([]);
