@@ -4,7 +4,7 @@
     import { cartItemsCount } from '../../stores/store.js';
     import { cartItems } from '../../stores/store.js';
     import { cartItemsTotal } from '../../stores/store.js';
-
+    import { addNewAlert } from '../../utils/alertUtils.js';
     // Example cards data
     const cards = [
       { imageSrc: 'https://placehold.co/600x600', text: 'Футболка ', price: 1200 },
@@ -24,7 +24,7 @@
       // console.log($cartItems.length);
       // console.log($cartItemsTotal);
       console.log($cartItems);
-      
+      addNewAlert('Товар добавлен в корзину');
     }
 </script>
   

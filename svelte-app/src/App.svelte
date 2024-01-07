@@ -3,6 +3,7 @@
     import Showcase from './Components/Showcase/Showcase.svelte';
 	import Footer from './Components/Footer/Footer.svelte';
     import Cart from './Components/Cart/Cart.svelte';
+	import AlertBar from './Components/AlertBar/AlertBar2.svelte';
 
 	const links = [
 		{ text: 'Магазин', href: '/' },
@@ -20,11 +21,11 @@
 </script>
 
 <style>
-	@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+	
 
-	:global(body) { margin: 0; padding: 0; }
+	:global(body) { margin: 0; padding: 0;}
 	body {
-		font-family: 'Roboto', sans-serif;
+		
 		margin: 0;
 		padding: 0;
 		background-color: #f9f9f9; 
@@ -89,6 +90,7 @@
 
 
 <body>
+	<AlertBar />
 	<Cart />
 	<Navbar links={links} bg_color={Navbar_bg_color}/>
 	<div style='height: 75px'></div>

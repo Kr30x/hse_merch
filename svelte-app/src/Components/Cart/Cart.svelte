@@ -1,14 +1,11 @@
 
 <script>
-    
-    import AlertBar from '../AlertBar/AlertBar.svelte';
-    let alertbar;
 
     import { is_cart_visible } from '../../stores/store.js';
     import { cartItemsCount } from '../../stores/store.js'; 
     import { cartItems } from '../../stores/store.js';
     import { cartItemsTotal } from '../../stores/store.js';
-
+    import { addNewAlert } from '../../utils/alertUtils.js';
 
     $: is_visible = $is_cart_visible;
     $: currentValue = $cartItemsCount;
@@ -40,7 +37,7 @@
             currentCart.splice(index, 1);
             $cartItemsCount -= 1;
             $cartItems = currentCart;
-            console.log(`Item at index ${index} deleted. Updated cartItems:`, $cartItems);
+            addNewAlert('Товар удален из корзины', '#c72b1aff')
         } else {
             console.error(`Invalid index ${index}. Item not deleted.`);
         }
@@ -125,7 +122,7 @@
         $cartItems = [];
         $cartItemsCount = 0;
         $cartItemsTotal = 0;
-        alertbar.NewAlert('Заказ создан!');
+        addNewAlert('Заказ создан!');
     }
 </script>
   
@@ -392,7 +389,7 @@ img{
     padding-top: 0.7rem;
     padding-bottom: 0.7rem;
     font-size: 1.5rem;
-    transition: color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .order-button:hover{
@@ -474,9 +471,6 @@ label{
 
 </style>
 
-<AlertBar bind:this={alertbar}/>
-
-
 <div class='darker {is_visible}'></div> 
 
 <div bind:this={cart_container} class="container {is_visible}" id='cart_container'>
@@ -501,7 +495,7 @@ label{
         <div class='total-container'>
         <h1 bind:this={total_text} class='total'>Итого: {$cartItemsTotal}₽</h1>
         </div>
-        <button bind:this={order_button} class = 'order-button' on:click={place_order}>Заказать</button>
+        <button bind:this={order_button} class = 'order-button' on:click={place_order}>Перейти к оформлению</button>
     {:else}
         <p>Корзина пуста.</p>
     {/if}
